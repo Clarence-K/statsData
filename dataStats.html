@@ -219,15 +219,29 @@
     <div id="A3">
         <h3>Create a function to find the mean of the quiz grades for a given penguin.</h3>
         <script>
-            var answer = "please complete";
-            report("#A3", answer)
+        
+          var whenPeng=function(given)
+          {
+            var Peng=classroom[given].quizes
+              var getQuiz=function(quiz)
+            {
+                return quiz.grade
+            }
+          var something=Peng.map(getQuiz)
+        var grades=d3.mean(grades,getQuiz)
+        return given.grades
+          }
+       
+          
+            report("#A3", whenPeng)
         </script>
     </div>
 
     <div id="A4">
         <h3>Create an array of the mean quiz score of each penguins. Use one line of "code"</h3>
         <script>
-            var answer = "please complete";
+         
+            var answer =classroom.map(whenPeng)
             report("#A4", answer)
         </script>
     </div>
@@ -235,11 +249,11 @@
     <div id="A5">
         <h3>Find the mean of all the quiz scores of the class. (one number)</h3>
         <script>
-            var answer = "please complete";
+         var QMeanAll=d3.mean(classroom.map(whenPeng))
+            var answer = QMeanAll;
             report("#A5", answer)
         </script>
     </div>
-
 
 
     <h1>Extra Work</h1>
